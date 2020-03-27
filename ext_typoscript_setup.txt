@@ -1,0 +1,1 @@
+plugin.tx_srfeuserregister_pi1.create.evalValues.email := addToList(hook)

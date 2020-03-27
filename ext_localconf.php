@@ -12,3 +12,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase_encryption']['fe_login'] = [
     'properties' => ['username', 'name', 'address', 'email', 'first_name', 'last_name', 'fax', 'telephone', 'company', 'zip', 'city']
 ];
 
+
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['sr_feuser_register']['tx_srfeuserregister_pi1']['model'][] = \PS\ExtbaseEncryptionFelogin\Hooks\SrFeuserRegister::class;
