@@ -1,0 +1,2 @@
+# cat=basic/string; type=boolean; label=Enable frontend login encrpytion
+enable = false

@@ -1,0 +1,14 @@
+{
+  "name": "PS\\ExtbaseEncryptionFelogin",
+  "type": "typo3-cms-extension",
+  "description": "",
+  "require": {
+    "typo3/cms-core": "^9.4",
+    "sjbr/sr-feuser-register": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PS\\ExtbaseEncryptionFelogin\\": "Classes/"
+    }
+  }
+}

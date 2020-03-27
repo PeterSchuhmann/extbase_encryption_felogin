@@ -26,7 +26,8 @@ $EM_CONF[$_EXTKEY] = array(
      	'depends' => [
          	'typo3' => '7.6.1-9.99.99',
             'extbase_encryption' => '',
-        	 'php' => '5.5.0-7.99.99'
+        	 'php' => '5.5.0-7.99.99',
+        	 'sr_feuser_register' => '0.0.0-99.99.99'
      	],
      	'conflicts' => [
         	 'compatibility6' => '7.6.0-7.6.99'
