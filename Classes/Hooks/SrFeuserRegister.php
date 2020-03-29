@@ -25,13 +25,20 @@ class SrFeuserRegister {
                 ->getRestrictions()
                 ->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         }
+
+        $value = $dataArray[$theField];
+        if ($theField == 'username' || $theField == 'email')
+        {
+            $value = strtolower($dataArray[$theField]);
+        }
+
         $queryBuilder
             ->select('uid', $theField)
             ->from($theTable)
             ->where(
                 $queryBuilder->expr()->orX(
-                    $queryBuilder->expr()->eq($theField, $queryBuilder->createNamedParameter($encryptor->encrypt($dataArray[$theField])), \PDO::PARAM_STR),
-                    $queryBuilder->expr()->eq($theField, $queryBuilder->createNamedParameter($dataArray[$theField]), \PDO::PARAM_STR)
+                    $queryBuilder->expr()->eq($theField, $queryBuilder->createNamedParameter($encryptor->encrypt($value)), \PDO::PARAM_STR),
+                    $queryBuilder->expr()->eq($theField, $queryBuilder->createNamedParameter($value), \PDO::PARAM_STR)
                 )
             )
             ->setMaxResults(1);
