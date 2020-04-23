@@ -20,6 +20,11 @@ class SrFeuserRegister {
         $queryBuilder
             ->getRestrictions()
             ->removeAll();
+
+        $queryBuilder
+            ->getRestrictions()
+            ->add(GeneralUtility::makeInstance(DeletedRestriction::class));
+
         if ($cmdKey === 'uniqueLocal' || $cmdKey === 'uniqueGlobal') {
             $queryBuilder
                 ->getRestrictions()
